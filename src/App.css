@@ -1,38 +1,148 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Nova+Flat&family=Philosopher:ital@1&family=Ubuntu&family=Roboto+Condensed&family=Satisfy&display=swap');
+
+body{
+	background-image: url('./images/Trianglify.png');
+	padding: 0;
+	margin: 0;
+	height: 100vh;
+	width:100vw;
+  display:flex;
   text-align: center;
+	justify-content: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+.loader{
+	-webkit-perspective:700px;
+	perspective: 700px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.loader>span{
+	font-size: 130px;
+	font-family: "franklin gothic medium",sans-serif;
+	display: inline-block;
+	animation:flip 2.6s infinite linear;
+	transform-origin:0 70%;
+	transform-style:preserve-3d;
+	-webkit-transform-style:preserve-3d;
+}
+
+@keyframes flip{
+	35%{
+		transform: rotateX(360deg);
+	}
+	100%{
+		transform: rotatex(360deg);
+	}
+}
+
+
+.loader>span:nth-child(even){
+	color:white;
+
+}
+
+.loader>span:nth-child(2){
+	animation-delay: 0.3s;
+}
+
+.loader>span:nth-child(3){
+	animation-delay: 0.6s;
+}
+
+.loader>span:nth-child(4){
+	animation-delay: 0.9s;
+}
+
+.loader>span:nth-child(5){
+	animation-delay: 1.2s;
+}
+
+.loader>span:nth-child(6){
+	animation-delay: 1.5s
+}
+
+.loader>span:nth-child(7){
+	animation-delay: 1.8s
+}
+
+.typewriting {
+  font-family: 'Philosopher', sans-serif;
+  overflow: hidden;
+  border-right: .15em solid orange; 
+  white-space: nowrap;
+  margin: auto; 
+  letter-spacing: .15em; 
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}
+
+.caption{
+  font-family: 'Satisfy', cursive;
+  animation: fade-in 5s linear;
+}
+
+@keyframes fade-in{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.img-left{
+  animation: slide 2s linear;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes slide{
+  from{
+    transform: translateX(-50%);
+    opacity: 0;
   }
-  to {
-    transform: rotate(360deg);
+  to{
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+.img-right{
+  animation: slide-r 2s linear;
+}
+
+@keyframes slide-r{
+  from{
+    transform: translateX(50%);
+    opacity: 0;
+  }
+  to{
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+.content{
+  animation: fade-in 3s linear;
+}
+
+@keyframes twist{
+  from{
+    transform: rotate(60);
+  }
+  to{
+    transform: rotate(0); 
   }
 }
